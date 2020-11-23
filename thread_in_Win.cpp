@@ -1,6 +1,5 @@
 #include <windows.h>
 #include <tchar.h>
-#include <strsafe.h>
 
 #define MAX_THREADS 3
 #define BUF_SIZE 255
@@ -17,7 +16,7 @@ typedef struct MyData {
 } MYDATA, *PMYDATA;
 
 
-int _tmain()
+int main()
 {
     PMYDATA pDataArray[MAX_THREADS];
     DWORD   dwThreadIdArray[MAX_THREADS];
