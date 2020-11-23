@@ -1,17 +1,11 @@
 #include <windows.h>
-
 #include <stdio.h>
-
 #include <conio.h>
-
- 
 
 DWORD WINAPI MyThreadFunction(LPVOID lpParam){
 printf("The parameter: %lu.\n", *(DWORD*)lpParam);
 return 0;
 }
-
- 
 
 int main(void){
 DWORD dwThreadId, dwThrdParam = 1;
