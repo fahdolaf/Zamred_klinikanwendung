@@ -90,6 +90,8 @@ int main()
 
 DWORD WINAPI MyThreadFunction( LPVOID lpParam ) 
 { 
+    PMYDATA pDataArray;
+
     // Cast the parameter to the correct data type.
     // The pointer is known to be valid because 
     // it was checked for NULL before the thread was created.
