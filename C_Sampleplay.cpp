@@ -8,7 +8,7 @@
  ============================================================================
  */
 
-//#include "ChocolateyInstaller.h"
+#include "ChocolateyInstaller.h"
 
 #include<stdio.h>
 #include<string.h>
