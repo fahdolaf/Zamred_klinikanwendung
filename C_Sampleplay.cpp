@@ -10,9 +10,11 @@
 
 //#include "ChocolateyInstaller.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
   
 void *functioncalledbythread(void *arg) ;
 
