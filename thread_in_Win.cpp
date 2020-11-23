@@ -113,7 +113,7 @@ DWORD WINAPI MyThreadFunction( LPVOID lpParam )
     // Print the parameter values using thread-safe functions.
 
 
-     printf("[+] Parameters = %d, %d\n"), pDataArray->val1, pDataArray->val2); 
+     printf("[+] Parameters = %d, %d\n", pDataArray->val1, pDataArray->val2); 
 
 
     return 0; 
@@ -143,12 +143,9 @@ void ErrorHandler(LPTSTR lpszFunction)
 
     lpDisplayBuf = (LPVOID)LocalAlloc(LMEM_ZEROINIT, 
         (lstrlen((LPCTSTR) lpMsgBuf) + lstrlen((LPCTSTR) lpszFunction) + 40) * sizeof(TCHAR)); 
-    StringCchPrintf((LPTSTR)lpDisplayBuf, 
-        LocalSize(lpDisplayBuf) / sizeof(TCHAR),
-        TEXT("%s failed with error %d: %s"), 
-        lpszFunction, dw, lpMsgBuf); 
+
     
-         printf("[-] %s failed with error %d: %s"), lpszFunction, dw, lpMsgBuf); 
+         printf("[-] %s failed with error %d: %s", lpszFunction, dw, lpMsgBuf); 
     MessageBox(NULL, (LPCTSTR) lpDisplayBuf, TEXT("Error"), MB_OK); 
 
     // Free error-handling buffer allocations.
