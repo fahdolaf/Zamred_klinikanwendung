@@ -2,6 +2,14 @@
 
 
 
+printf("\n========= Chocolatey Installer ============\n" )
+
+void ChocolateyInstaller::init(){
+
+printf("\n========= Chocolatey Installer ============\n" )
+
+}
+
 void ChocolateyInstaller::installAPPs(){
 
 
