@@ -6,6 +6,7 @@
 #define BUF_SIZE 255
 
 DWORD WINAPI MyThreadFunction( LPVOID lpParam );
+void ErrorHandler(LPTSTR lpszFunction) ;
 
 // Sample custom data structure for threads to use.
 // This is passed by void pointer so it can be any data type
@@ -113,13 +114,9 @@ void ErrorHandler(LPTSTR lpszFunction)
     LPVOID lpMsgBuf;
     DWORD dw = GetLastError(); 
 
-
     // Display the error message.
 
-
-    
-
-         printf("[-] %s failed with error %d: %s"), lpszFunction, dw, lpMsgBuf);  
+    printf("[-] %s failed with error %d: %s", lpszFunction, dw, lpMsgBuf);  
 
     // Free error-handling buffer allocations.
 
