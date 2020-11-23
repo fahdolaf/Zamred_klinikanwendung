@@ -6,7 +6,7 @@ char welcome_msg[]={"\n====== Hello ChocolateyInstaller =======\n"};
 
 void ChocolateyInstaller::init(){
 
-printf("\n========= Chocolatey Installer ============\n" );
+printf("\n%s\n",welcome_msg );
 
 }
 
