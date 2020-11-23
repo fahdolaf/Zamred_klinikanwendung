@@ -16,7 +16,7 @@ struct thread_data
 DWORD WINAPI thread_func(LPVOID lpParameter)
 {
  thread_data *td = (thread_data*)lpParameter;
- cout << "thread with id = " << td->m_id << endl;
+	printf("thread with id =  %d\n", td->m_id);
  return 0;
 }
 
