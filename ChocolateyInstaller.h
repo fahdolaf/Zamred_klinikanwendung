@@ -12,12 +12,11 @@ using namespace std;
 
 class ChocolateyInstaller {
   private:
-    int counter_;
+    char welcome_msg[]={"\n====== Hello ChocolateyInstaller =======\n"};
   
   public:
     ChocolateyInstaller() : counter_(0) {}
-      int Incr();
-      int value();
+      void init()
       void installAPPs();
       void install_Single_APP(char *appName);
 
