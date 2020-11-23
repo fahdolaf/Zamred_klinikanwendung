@@ -14,8 +14,6 @@
 #include<stdlib.h>
 #include<unistd.h>
 
-#include<pthread.h>
-
 int main() {
 
 	printf("\n========= Main ============\n" );
