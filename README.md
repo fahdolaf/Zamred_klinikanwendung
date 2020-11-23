@@ -31,6 +31,6 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src/ChocolateyInstaller.o" "src/Choc
 
 g++ -o C_Sampleplay.exe "src/ChocolateyInstaller.o" "src/C_Sampleplay.o"
 
-C_Sampleplay.exe
+./C_Sampleplay.exe
 
 
