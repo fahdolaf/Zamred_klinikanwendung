@@ -20,13 +20,18 @@
   
 pthread_t thread_id[NUM_OF_THREADS];
   
-void* calls(void* ptr) 
-{ 
-    // using pthread_self() get current thread id 
-    printf("In function \nthread id = %d\n", pthread_self()); 
-    pthread_exit(NULL); 
+void *functioncalledbythread(void *arg) {
+    int count = 0, i;
+    int *passed_value = (int*)arg;
+    printf("Value passed to thread from main : %d \n", *passed_value);
+  
+    for(i=0; i<10; i++) {
+        count++;
+        sleep(1);
+    }
     return NULL; 
-} 
+}
+  
   
 int main() {
 
@@ -35,10 +40,20 @@ int main() {
 	//ChocolateyInstaller chocolateyInstaller;
 	//chocolateyInstaller.installAPPs();
 	//chocolateyInstaller.init();
-    pthread_t thread; // declare thread 
-    pthread_create(&thread, NULL, calls, NULL); 
-    printf("In main \nthread id = %d\n", thread);  
-    pthread_join(thread, NULL);  
+    int retval;
+    pthread_t threadId;
+    int pass_this_val = 5;
+  
+    printf("Creating simple thread\n");
+    if((retval = pthread_create(&threadId, NULL, &functioncalledbythread, (void *)&pass_this_val))) {
+        printf("Thread creation failed: %d\n", retval);
+    }
+  
+    printf("Waiting in main for thread to finish\n");
+    /* Wait till threads are complete before main continues.*/
+    pthread_join(threadId, NULL);
+  
+    printf("Thread execution finished, exiting from main program\n");
     return 0; 
 }
 
