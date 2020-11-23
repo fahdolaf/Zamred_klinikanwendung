@@ -12,7 +12,7 @@
 
 #include <stdio.h> 
 #include <stdlib.h> 
-#include <pthread.h> 
+#include <pthreads.h>
 
 void* calls(void* ptr) 
 { 
