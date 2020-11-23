@@ -111,12 +111,11 @@ void ErrorHandler(LPTSTR lpszFunction)
 { 
     // Retrieve the system error message for the last-error code.
 
-    LPVOID lpMsgBuf;
     DWORD dw = GetLastError(); 
 
     // Display the error message.
 
-    printf("[-] %s failed with error %d: %s", lpszFunction, dw, lpMsgBuf);  
+    printf("[-] %s failed with error %ld", lpszFunction, dw);  
 
     // Free error-handling buffer allocations.
 
