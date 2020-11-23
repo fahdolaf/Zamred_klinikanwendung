@@ -27,6 +27,6 @@ int main() {
   HANDLE thread = CreateThread(NULL, 0, ThreadFunc, NULL, 0, NULL);
   if (thread) {
     // Optionally do stuff, such as wait on the thread.
-   printf("Thread creation failed: %d\n", thread);
+   printf("Thread creation Done \n");
   }
 }
