@@ -8,6 +8,17 @@ printf("The parameter: %lu.\n", *(DWORD*)lpParam);
 return 0;
 }
 
+struct thread_data
+{
+ int m_id;
+ thread_data(int id) : m_id(id) {}
+};
+DWORD WINAPI thread_func(LPVOID lpParameter)
+{
+ thread_data *td = (thread_data*)lpParameter;
+ cout << "thread with id = " << td->m_id << endl;
+ return 0;
+}
 
 DWORD WINAPI myThread(LPVOID lpParameter)
 {
@@ -15,7 +26,7 @@ DWORD WINAPI myThread(LPVOID lpParameter)
 myCounter=66;
 
 
-	printf("Handle to thread closed successfully.%d , \n",myCounter);
+	printf("Handle to thread >>>>>>>>>>>> .%d , \n",myCounter);
 	
 	return 0;
 }
@@ -53,7 +64,11 @@ printf("Handle to thread closed successfully.\n");
 	
 	CloseHandle(myHandle);
  
- 
+ for (int i=0; i< 10; i++)
+ {
+  CreateThread(NULL, 0, thread_func, new thread_data(i) , 0, 0);
+ }
+	
 return 0;
 }
 
