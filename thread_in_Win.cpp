@@ -10,6 +10,10 @@
 
 #include <windows.h>
 
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
 DWORD WINAPI ThreadFunc(void* data) {
   // Do stuff.  This will be the first function called on the new thread.
   // When this function returns, the thread goes away.  See MSDN for more details.
