@@ -91,19 +91,6 @@ int main()
 
 DWORD WINAPI MyThreadFunction( LPVOID lpParam ) 
 { 
-    HANDLE hStdout;
-    PMYDATA pDataArray;
-
-    TCHAR msgBuf[BUF_SIZE];
-    size_t cchStringSize;
-    DWORD dwChars;
-
-    // Make sure there is a console to receive output results. 
-
-    hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
-    if( hStdout == INVALID_HANDLE_VALUE )
-        return 1;
-
     // Cast the parameter to the correct data type.
     // The pointer is known to be valid because 
     // it was checked for NULL before the thread was created.
@@ -111,7 +98,6 @@ DWORD WINAPI MyThreadFunction( LPVOID lpParam )
     pDataArray = (PMYDATA)lpParam;
 
     // Print the parameter values using thread-safe functions.
-
 
      printf("[+] Parameters = %d, %d\n", pDataArray->val1, pDataArray->val2); 
 
