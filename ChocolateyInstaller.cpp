@@ -2,7 +2,7 @@
 
 
 
-printf("\n========= Chocolatey Installer ============\n" )
+char welcome_msg[]={"\n====== Hello ChocolateyInstaller =======\n"};
 
 void ChocolateyInstaller::init(){
 
