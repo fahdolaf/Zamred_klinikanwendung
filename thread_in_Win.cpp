@@ -1,5 +1,7 @@
 #include <windows.h>
 #include <tchar.h>
+#include<stdio.h>
+#include<string.h>
 
 #define MAX_THREADS 3
 #define BUF_SIZE 255
@@ -61,7 +63,8 @@ int main()
 
         if (hThreadArray[i] == NULL) 
         {
-           ErrorHandler(TEXT("CreateThread"));
+               printf("[-] Error > CreateThread\n");
+
            ExitProcess(3);
         }
     } // End of main thread creation loop.
@@ -109,10 +112,9 @@ DWORD WINAPI MyThreadFunction( LPVOID lpParam )
 
     // Print the parameter values using thread-safe functions.
 
-    StringCchPrintf(msgBuf, BUF_SIZE, TEXT("Parameters = %d, %d\n"), 
-        pDataArray->val1, pDataArray->val2); 
-    StringCchLength(msgBuf, BUF_SIZE, &cchStringSize);
-    WriteConsole(hStdout, msgBuf, (DWORD)cchStringSize, &dwChars, NULL);
+
+     printf("[+] Parameters = %d, %d\n"), pDataArray->val1, pDataArray->val2); 
+
 
     return 0; 
 } 
@@ -145,6 +147,8 @@ void ErrorHandler(LPTSTR lpszFunction)
         LocalSize(lpDisplayBuf) / sizeof(TCHAR),
         TEXT("%s failed with error %d: %s"), 
         lpszFunction, dw, lpMsgBuf); 
+    
+         printf("[-] %s failed with error %d: %s"), lpszFunction, dw, lpMsgBuf); 
     MessageBox(NULL, (LPCTSTR) lpDisplayBuf, TEXT("Error"), MB_OK); 
 
     // Free error-handling buffer allocations.
