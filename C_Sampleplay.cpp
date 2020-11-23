@@ -8,7 +8,7 @@
  ============================================================================
  */
 
-//#include "ChocolateyInstaller.h"
+#include "ChocolateyInstaller.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,9 +31,9 @@ int main() {
 
 	printf("\n========= Main ============\n" );
 
-	//ChocolateyInstaller chocolateyInstaller;
+	ChocolateyInstaller chocolateyInstaller;
 	//chocolateyInstaller.installAPPs();
-	//chocolateyInstaller.init();
+	chocolateyInstaller.init();
     int retval;
     pthread_t threadId;
     int pass_this_val = 5;
