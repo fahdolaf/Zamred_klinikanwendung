@@ -16,7 +16,7 @@ class ChocolateyInstaller {
   
   public:
     ChocolateyInstaller() : counter_(0) {}
-      void init()
+      void init();
       void installAPPs();
       void install_Single_APP(char *appName);
 
