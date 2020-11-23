@@ -12,7 +12,10 @@ return 0;
 DWORD WINAPI myThread(LPVOID lpParameter)
 {
 	unsigned int& myCounter = *((unsigned int*)lpParameter);
-	while(myCounter < 0xFFFFFFFF) ++myCounter;
+	while(myCounter < 0xFF){
+		++myCounter;
+		cout << myCounter << endl;
+	}
 	return 0;
 }
 
@@ -43,14 +46,9 @@ printf("Handle to thread closed successfully.\n");
  
  	using namespace std;
 
-	unsigned int myCounter = 0;
+	unsigned char myCounter = 0;
 	DWORD myThreadID;
 	HANDLE myHandle = CreateThread(0, 0, myThread, &myCounter, 0, &myThreadID);
-	char myChar = ' ';
-	while(myChar != 'q') {
-		cout << myCounter << endl;
-		myChar = getchar();
-	}
 	
 	CloseHandle(myHandle);
  
