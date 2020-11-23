@@ -12,7 +12,7 @@ using namespace std;
 
 class ChocolateyInstaller {
   private:
-    char welcome_msg[]={"\n====== Hello ChocolateyInstaller =======\n"};
+    int counter_;
   
   public:
     ChocolateyInstaller() : counter_(0) {}
