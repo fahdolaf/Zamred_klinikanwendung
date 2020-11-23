@@ -112,5 +112,5 @@ void ErrorHandler(LPTSTR lpszFunction)
     // Retrieve the system error message for the last-error code.
     DWORD dw = GetLastError(); 
     // Display the error message.
-    printf("[-] %s failed with error %ld", lpszFunction, dw);  
+    printf("[-] Error > %s failed with error %ld", lpszFunction, dw);  
 }
