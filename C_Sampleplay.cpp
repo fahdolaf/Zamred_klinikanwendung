@@ -14,18 +14,8 @@
 #include <stdlib.h>
 #include <pthread.h>
   
-void *functioncalledbythread(void *arg) {
-    int count = 0, i;
-    int *passed_value = (int*)arg;
-    printf("Value passed to thread from main : %d \n", *passed_value);
-  
-    for(i=0; i<10; i++) {
-        count++;
-        sleep(1);
-    }
-    return NULL; 
-}
-  
+void *functioncalledbythread(void *arg) ;
+
   
 int main() {
 
@@ -52,4 +42,15 @@ int main() {
 }
 
 
-
+void *functioncalledbythread(void *arg) {
+    int count = 0, i;
+    int *passed_value = (int*)arg;
+    printf("Value passed to thread from main : %d \n", *passed_value);
+  
+    for(i=0; i<10; i++) {
+        count++;
+        sleep(1);
+    }
+    return NULL; 
+}
+  
