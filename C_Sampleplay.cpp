@@ -10,15 +10,9 @@
 
 //#include "ChocolateyInstaller.h"
 
-#include<stdio.h>
-#include<string.h>
-#include<pthread.h>
-#include<stdlib.h>
-#include<unistd.h>
-  
-#define NUM_OF_THREADS 2
-  
-pthread_t thread_id[NUM_OF_THREADS];
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
   
 void *functioncalledbythread(void *arg) {
     int count = 0, i;
