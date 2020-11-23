@@ -17,7 +17,8 @@ int main() {
 	printf("\n========= Main ============\n" );
 
 	ChocolateyInstaller chocolateyInstaller;
-	chocolateyInstaller.installAPPs();
+	//chocolateyInstaller.installAPPs();
+	chocolateyInstaller.init();
 
 	return 0;
 }
