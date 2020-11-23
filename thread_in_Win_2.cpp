@@ -12,10 +12,8 @@ return 0;
 DWORD WINAPI myThread(LPVOID lpParameter)
 {
 	unsigned int& myCounter = *((unsigned int*)lpParameter);
-myCounter++;
-myCounter++;
-myCounter++;
-myCounter++;
+myCounter=66;
+
 
 	printf("Handle to thread closed successfully.%d , \n",myCounter);
 	
