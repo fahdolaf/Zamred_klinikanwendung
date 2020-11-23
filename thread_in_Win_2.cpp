@@ -12,10 +12,9 @@ return 0;
 DWORD WINAPI myThread(LPVOID lpParameter)
 {
 	unsigned int& myCounter = *((unsigned int*)lpParameter);
-	while(myCounter < 0xFF){
-		++myCounter;
+
 		cout << myCounter << endl;
-	}
+	
 	return 0;
 }
 
