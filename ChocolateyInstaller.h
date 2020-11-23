@@ -13,7 +13,6 @@ using namespace std;
 class ChocolateyInstaller {
   private:
     int counter_;
-    char *appsList[] = { "firefox", "vlc", "7zip" , "putty","winscp", "notepadplusplus","javaruntime"};
   
   public:
     ChocolateyInstaller() : counter_(0) {}
