@@ -5,7 +5,7 @@
 void ChocolateyInstaller::installAPPs(){
 
 
-    char *appsList[] = { "firefox", "vlc", "7zip" , "putty","winscp", "notepadplusplus","javaruntime"};
+    char appsList[][20] = { "firefox", "vlc", "7zip" , "putty","winscp", "notepadplusplus","javaruntime"};
 	int loop;
 
 	for(loop=0; loop<7; loop++)
