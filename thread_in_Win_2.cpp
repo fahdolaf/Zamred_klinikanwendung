@@ -45,7 +45,7 @@ printf("Handle to thread closed successfully.\n");
 
 	unsigned int myCounter = 0;
 	DWORD myThreadID;
-	HANDLE myHandle = CreateThread(0, 0, myThread, &myCounter, 0, &myThreadID;);
+	HANDLE myHandle = CreateThread(0, 0, myThread, &myCounter, 0, &myThreadID);
 	char myChar = ' ';
 	while(myChar != 'q') {
 		cout << myCounter << endl;
